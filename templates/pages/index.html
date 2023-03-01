@@ -1,0 +1,287 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+    <!-- home section starts  -->
+    
+
+    <div class="home" id="home">
+        <div class="left">
+            <img src="{% static 'image/home-img.svg' %}" alt="">
+        </div>
+        <div class="right">
+            <h3>Stay Home stay healthy</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam laborum neque nostrum porro quisquam? Sed voluptates id tempore ea qui odio reiciendis perferendis neque ipsam, autem minus error cumque aut ipsum, quo, unde facere. Odio dolorum error nam illo? Porro nam ab consectetur nemo soluta, voluptatem </p>
+            <a href="" id="btn"> contact us <span><i class="fa-solid fa-arrow-right-long"></i></span> </a>
+        </div>
+
+    </div>
+
+
+
+    <!-- home section ends  -->
+
+
+    <!-- icon section starts  -->
+    {% include 'includes/messages.html' %}
+    <div class="icon-container">
+        <div class="icon-col">
+            <i class="fa-solid fa-users"></i>
+            <h3>140+</h3>
+            <p>doctors at work</p>
+        </div>
+        <div class="icon-col">
+            <i class="fa-solid fa-hospital"></i>
+            <h3>1040+</h3>
+            <p>satisfied patient</p>
+        </div>
+        <div class="icon-col">
+            <i class="fa-solid fa-bed-pulse"></i>
+            <h3>500+</h3>
+            <p>beds available</p>
+        </div>
+        <div class="icon-col">
+            <i class="fa-solid fa-hospital"></i>
+            <h3>80+</h3>
+            <p>hospitals</p>
+        </div>
+    </div>
+
+
+    <!-- icon section ends  -->
+
+
+ 
+    <!-- services section starts  -->
+
+    <div class="services" id="services">
+        <h1>our <span>services</span> </h1>
+        <div class="row">
+            
+            <div class="ser-col">
+                <i class="fa-solid fa-check-to-slot"></i>
+                <h3>free checkup</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, illo.</p>
+                <a href="" id="btn2"> contact us <span><i class="fa-solid fa-arrow-right-long"></i></span> </a>
+            </div>
+            <div class="ser-col">
+                <i class="fa-solid fa-truck-medical"></i>
+                <h3>24/7 ambulance</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, illo.</p>
+                <a href="" id="btn2"> contact us <span><i class="fa-solid fa-arrow-right-long"></i></span> </a>
+            </div>
+            <div class="ser-col">
+                <i class="fa-solid fa-user-doctor"></i>
+                <h3>expart doctors</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, illo.</p>
+                <a href="" id="btn2"> contact us <span><i class="fa-solid fa-arrow-right-long"></i></span> </a>
+            </div>
+            <div class="ser-col">
+                <i class="fa-solid fa-users"></i>
+                <h3>expart doctors</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, illo.</p>
+                <a href="" id="btn2"> contact us <span><i class="fa-solid fa-arrow-right-long"></i></span> </a>
+            </div>
+            <div class="ser-col">
+                <i class="fa-solid fa-hand-holding-hand"></i>
+                <h3>total care</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, illo.</p>
+                <a href="" id="btn2"> contact us <span><i class="fa-solid fa-arrow-right-long"></i></span> </a>
+            </div>
+            <div class="ser-col">
+                <i class="fa-sharp fa-solid fa-bed"></i>
+                <h3>bed facility</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, illo.</p>
+                <a href="" id="btn2"> contact us <span><i class="fa-solid fa-arrow-right-long"></i></span> </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- services section ends  -->
+
+
+
+    <!-- about section starts  -->
+
+    <div class="about" id="about">
+        <h1><span>About</span> Us</h1>
+
+        <div class="about-row">
+
+            <div class="image">
+                <img src="{% static 'image/about-img.svg'%}" alt="">
+            </div>
+            <div class="about-content">
+                <h3>we take care of your healthy life</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam laborum neque nostrum porro quisquam? Sed voluptates id tempore ea qui odio reiciendis perferendis neque ipsam, autem minus error cumque aut ipsum, quo, unde facere. Odio dolorum error nam illo? Porro nam ab consectetur nemo soluta, voluptatem </p>
+            <a href="" id="btn"> contact us <span><i class="fa-solid fa-arrow-right-long"></i></span> </a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- about section ends  -->
+
+
+
+    <!-- doctor section starts  -->
+
+    <div class="doctor" id="doctor">
+        <h1>our <span>Doctor</span> </h1>
+        <div class="row">
+            {% for doctor in doctors %}
+                <div class="ser-col">
+                    
+                    <img src="{{doctor.user.image.url}}" alt="" style="width:262px">
+                    <h3>{{doctor.user.first_name}} {{doctor.user.last_name}}</h3>
+                    <p>{{doctor.deparment}}</p>
+                    <div class="icon">
+                        <a href="{{doctor.facebook}}"><i class="fa-brands fa-facebook"></i></a> 
+                        <a href="{{doctor.facebook}}"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="{{doctor.facebook}}"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="{{doctor.facebook}}"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="{{doctor.facebook}}"><i class="fa-brands fa-twitter"></i></a>
+                    </div> 
+                </div>
+            {% endfor %}
+
+
+            
+        </div>
+    </div>
+
+
+    <!-- doctor section ends  -->
+
+
+
+   
+
+    <!-- review section starts  -->
+
+    <div class="review" id="review">
+        <h1>our <span>customer</span> </h1>
+        <div class="review-container">
+            
+            <div class="review-col">
+                <img src="{% static 'image/pic-3.png'%}" alt="" class="review-img">
+                <h3>Abdul Ahad</h3>
+                <div class="review-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div> 
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt doloremque  </p>
+                
+                <div class="upper">
+                    
+                    
+                </div>
+            </div>
+            <div class="review-col">
+                <img src="{% static 'image/pic-1.png'%}" alt="" class="review-img">
+                <h3>Abdul Ahad</h3>
+                <div class="review-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div> 
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt doloremque  </p>
+                
+                <div class="upper">
+                    
+                    
+                </div>
+            </div>
+            <div class="review-col">
+                <img src="{% static 'image/pic-2.png'%}" alt="" class="review-img">
+                <h3>Abdul Ahad</h3>
+                <div class="review-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div> 
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt doloremque  </p>
+                
+                <div class="upper">
+                    
+                    
+                </div>
+            </div>
+            <div class="review-col">
+                <img src="{% static 'image/doc-1.jpg'%}" alt="" class="review-img">
+                <h3>Abdul Ahad</h3>
+                <div class="review-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
+                </div> 
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt doloremque  </p>
+                
+                <div class="upper">
+                    
+                    
+                </div>
+            </div>
+            <div class="review-col">
+                <img src="{% static 'image/pic-2.png'%}" alt="" class="review-img">
+                <h3>Abdul Ahad</h3>
+                <div class="review-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div> 
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt doloremque  </p>
+                
+                <div class="upper">
+                    
+                    
+                </div>
+            </div>
+            <div class="review-col">
+                <img src="{% static 'image/pic-1.png'%}" alt="" class="review-img">
+                <h3>Abdul Ahad</h3>
+                <div class="review-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
+                </div> 
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt doloremque  </p>
+                
+                <div class="upper">
+                    
+                    
+                </div>
+            </div>
+            
+            </div>
+            
+        </div>
+    </div>
+
+
+    <!-- review section ends  -->
+
+
+
+   
+   {% endblock %}

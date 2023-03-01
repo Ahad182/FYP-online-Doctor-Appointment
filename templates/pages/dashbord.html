@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+
+
+<div class="maindashboard">
+    <div class="dash-row">
+        
+        {% if object%}
+        <table>
+            
+            <tr>
+                <th>Patient Nmae</th>
+                <th>doctor Name</th>
+                <th>date</th>
+                <th>time</th>
+                <th>HB</th>
+                <th>BMI</th>
+                <th>BS</th>
+                <th>update</th>
+                <th>delete</th>
+            </tr>
+            {% for obj in object %}
+            <tr>
+                <td>{{obj.patient.username}}</td>
+                <td>{{obj.doctor}}</td>
+                <td>{{obj.date}}</td>
+                <td>{{obj.time}}</td>
+                <td>{{obj.hb}}</td>
+                <td>{{obj.bmi}}</td>
+                <td>{{obj.bs}}</td>
+                <td><a href="{% url 'appointment_detail' obj.id %} ">update</a></td>
+                <td><a href="{% url 'appointmentdelete' obj.id %}">delete</a></td>
+
+                
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <h1>Record not found</h1>
+        {% endif %}
+
+    
+    </div>
+</div>
+
+
+
+{% endblock %}

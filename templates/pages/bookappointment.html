@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+{% load static %}
+
+
+<!-- book appointment section starts -->
+
+<div class="about" id="about">
+    <h1><span>book</span> appointment</h1>
+
+    <div class="about-row">
+
+        <div class="image">
+            <img src="{% static 'image/book-img.svg' %}" alt="">
+        </div>
+        <div class="appojntment-form">
+            <h3>book now</h3>
+           
+            <form  method="POST">
+                {% csrf_token %}
+                {{fm|crispy}}
+                <input type="submit" value="submit" id="btn">
+                <input type="submit" value="cabcel" id="btn">
+                
+                
+    
+            </form>
+        </div>
+
+        
+
+    </div>
+</div>
+
+
+
+
+<!-- book appointment section ends -->
+
+
+
+
+
+
+{% endblock  %}

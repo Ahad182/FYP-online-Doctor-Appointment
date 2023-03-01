@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+
+
+
+
+{% block content %}
+
+{% load static %}
+
+<!-- registration form section start     -->
+
+<div class="register-container">
+    {% include 'includes/messages.html' %}
+
+    <div class="register-row">
+        <div class="title">
+            <h1>Register</h1>
+        </div>
+        
+        <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+            <div class="user-detail">
+                <div class="input-fields">
+                    <input type="text" name="username" placeholder=" enter username" class="box" required>
+                    
+                </div>
+                <div class="input-fields">
+                    <input type="text" name="first_name" placeholder="First Name" class="box" required>
+                    
+                </div>
+                <div class="input-fields">
+                    <input type="text" name="middle_name" placeholder="middle Name" class="box" required>
+                    
+                </div>
+                <div class="input-fields">
+                    <input type="text" name="last_name" placeholder="last Name" class="box" required>
+                    
+                </div>
+                <div class="input-fields">
+                    <input type="text" name="father_name" placeholder="father name" class="box" required>
+                    
+                </div>
+                <div class="input-fields">
+                    <input type="email" name="email" placeholder="email" class="box" required>
+                    
+                </div>
+                <div class="input-fields">
+                    <input type="text" name="phone" placeholder="phone" class="box" required>
+                    
+                </div>
+                
+                
+                <div class="input-fields">
+                    {% comment %} <input type="text" name="gender" placeholder="gender" class="box"> {% endcomment %}
+                    <select name="blood" id="" class="box" >
+                        <option value="" disabled selected>-- Select blood group --</option>
+                        {% for blood in blood_group %}
+                        <option value="{{blood.blood}}" >{{blood.blood}}</option> 
+                        {% endfor %} 
+                    </select> 
+                    
+                </div>
+                <div class="input-fields">
+                    {% comment %} <input type="text" name="bloo" placeholder="blood" class="box"> {% endcomment %}
+                    <select name="gender" id="" class="box" >
+                        <option value="" disabled selected>-- Select Gender  --</option>
+                        {% for gender in gender_group %}
+                        <option value="{{gender.gender}}" >{{gender.gender}}</option> ab+--------- </option>
+                        {% endfor %} 
+                    </select> 
+                    
+                </div>
+                <div class="input-fields">
+                    <textarea name="address" class="box" cols="30" rows="1"  placeholder="Address" required></textarea>
+                    
+                </div>
+
+                <div class="input-fields">
+                    <input type="password" name="password" placeholder="password" class="box" required>
+                    
+                </div>
+                <div class="input-fields">
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" class="box" required>
+                    
+                </div>
+                
+            </div>
+            <!-- <div class="gender-detail">
+                <div class="gender-title" > <h3>Gender</h3> </div>
+                <div class="gender-category">
+                    <div class="gender-fields">
+                        <input type="radio" name="gender" value="male" ><span>male</span>
+                    </div> 
+                    <div class="gender-fields">
+                       <input type="radio" name="gender" value="male"><span>female</span> 
+                    </div>   
+                    <div class="gender-fields">
+                        <input type="radio" name="gender" value="other"><span>other</span>
+                    </div>
+                </div> 
+            </div> -->
+            <div class="register-button">
+                <button type="submit" id="btn2" class="btn-register">register</button>
+                <button type="reset" id="btn2" class="btn-register">reset</button>
+            </div>
+        </form>
+        <div class="other">
+            <span>allreadyhave an account ?</span> <a href="{% url 'login' %}">login</a>
+            
+        </div>
+    </div>
+
+</div>
+
+<!-- registration form section ends     -->
+
+{% endblock %}
